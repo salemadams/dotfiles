@@ -1,16 +1,21 @@
 -- [[ Colorscheme ]]
--- See `:help tokyonight.nvim`
+-- See `:help tokyodark.nvim`
 
 return {
-  'folke/tokyonight.nvim',
+  'tiagovla/tokyodark.nvim',
   priority = 1000,
   config = function()
-    ---@diagnostic disable-next-line: missing-fields
-    require('tokyonight').setup {
+    require('tokyodark').setup {
+      transparent_background = false,
+      gamma = 1.00,
       styles = {
         comments = { italic = false },
+        keywords = { italic = false },
+        identifiers = { italic = false },
+        functions = {},
+        variables = {},
       },
     }
-    vim.cmd.colorscheme 'tokyonight-night'
+    vim.cmd.colorscheme 'tokyodark'
   end,
 }
