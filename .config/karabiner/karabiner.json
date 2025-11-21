@@ -1,25 +1,18 @@
 {
     "profiles": [
         {
-            "complex_modifications": {
-                "rules": [
-                    {
-                        "description": "New Rule (change left_control+open_bracket to escape)",
-                        "manipulators": [
-                            {
-                                "from": {
-                                    "key_code": "open_bracket",
-                                    "modifiers": { "mandatory": ["left_control"] }
-                                },
-                                "to": [{ "key_code": "escape" }],
-                                "type": "basic"
-                            }
-                        ]
-                    }
-                ]
-            },
             "name": "Default profile",
             "selected": true,
+            "simple_modifications": [
+                {
+                    "from": { "key_code": "caps_lock" },
+                    "to": [{ "key_code": "escape" }]
+                },
+                {
+                    "from": { "key_code": "escape" },
+                    "to": [{ "key_code": "vk_none" }]
+                }
+            ],
             "virtual_hid_keyboard": { "keyboard_type_v2": "ansi" }
         }
     ]

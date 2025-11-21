@@ -4,6 +4,13 @@
 
 return {
   'nvim-neo-tree/neo-tree.nvim',
+	    config = function()
+        require("nvim-tree").setup({
+            filters = {
+                dotfiles = true,
+            },
+            lazy = false
+        }),
   version = '*',
   dependencies = {
     'nvim-lua/plenary.nvim',
@@ -26,12 +33,6 @@ return {
         with_expanders = true,
         expander_collapsed = '',
         expander_expanded = '',
-      },
-      icon = {
-        folder_closed = '',
-        folder_open = '',
-        folder_empty = '󰜌',
-        default = '',
       },
       git_status = {
         symbols = {
