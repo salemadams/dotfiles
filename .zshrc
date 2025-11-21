@@ -37,6 +37,8 @@ alias ls='ls -a'
 # ---- Alias for dotfiles repo ---- 
 alias config="git --git-dir=$HOME/.dotfiles --work-tree=$HOME"
 
+# ---- Alias for opening dotfiles in LazyGit ----
+alias lgdot='lazygit --git-dir=$HOME/.dotfiles --work-tree=$HOME'
 
 source /opt/homebrew/share/zsh-autosuggestions/zsh-autosuggestions.zsh
 source /opt/homebrew/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
