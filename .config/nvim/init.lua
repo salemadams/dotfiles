@@ -33,10 +33,6 @@ Original kickstart.nvim config backed up to: init.lua.backup
 -- [[ Load Core Configuration ]]
 -- These must be loaded before plugins to ensure proper initialization
 
--- Disable netrw to use Neotree on start --
-vim.g.loaded_netrw = 1
-vim.g.loaded_netrwPlugin = 1
-
 -- Set leader keys and vim options
 -- NOTE: Must happen before plugins are loaded (otherwise wrong leader will be used)
 require 'config.options'
