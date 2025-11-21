@@ -93,7 +93,7 @@ return {
       vim.diagnostic.config {
         severity_sort = true,
         float = { border = 'rounded', source = 'if_many' },
-        underline = { severity = vim.diagnostic.severity.ERROR },
+        underline = true, -- Underline all severities for better visibility
         signs = vim.g.have_nerd_font and {
           text = {
             [vim.diagnostic.severity.ERROR] = '󰅚 ',
@@ -105,8 +105,17 @@ return {
         virtual_text = {
           source = 'if_many',
           spacing = 2,
+          prefix = vim.g.have_nerd_font and '●' or '■',
           format = function(diagnostic)
-            return diagnostic.message
+            -- Add severity icon prefix for clarity
+            local icons = {
+              [vim.diagnostic.severity.ERROR] = '󰅚',
+              [vim.diagnostic.severity.WARN] = '󰀪',
+              [vim.diagnostic.severity.INFO] = '󰋽',
+              [vim.diagnostic.severity.HINT] = '󰌶',
+            }
+            local icon = icons[diagnostic.severity] or ''
+            return string.format('%s %s', icon, diagnostic.message)
           end,
         },
       }
@@ -125,12 +134,40 @@ return {
             },
           },
         },
+        ts_ls = {
+          -- TypeScript/JavaScript/React language server
+          settings = {
+            typescript = {
+              inlayHints = {
+                includeInlayParameterNameHints = 'all',
+                includeInlayParameterNameHintsWhenArgumentMatchesName = false,
+                includeInlayFunctionParameterTypeHints = true,
+                includeInlayVariableTypeHints = true,
+                includeInlayPropertyDeclarationTypeHints = true,
+                includeInlayFunctionLikeReturnTypeHints = true,
+                includeInlayEnumMemberValueHints = true,
+              },
+            },
+            javascript = {
+              inlayHints = {
+                includeInlayParameterNameHints = 'all',
+                includeInlayParameterNameHintsWhenArgumentMatchesName = false,
+                includeInlayFunctionParameterTypeHints = true,
+                includeInlayVariableTypeHints = true,
+                includeInlayPropertyDeclarationTypeHints = true,
+                includeInlayFunctionLikeReturnTypeHints = true,
+                includeInlayEnumMemberValueHints = true,
+              },
+            },
+          },
+        },
       }
 
       -- Ensure tools are installed
       local ensure_installed = vim.tbl_keys(servers or {})
       vim.list_extend(ensure_installed, {
         'stylua',
+        'prettier',
       })
       require('mason-tool-installer').setup { ensure_installed = ensure_installed }
 

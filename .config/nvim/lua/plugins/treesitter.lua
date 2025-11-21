@@ -18,6 +18,13 @@ return {
       'query',
       'vim',
       'vimdoc',
+      -- React/React-Native support
+      'typescript',
+      'tsx',
+      'javascript',
+      'jsx',
+      'json',
+      'css',
     },
     auto_install = true,
     highlight = {

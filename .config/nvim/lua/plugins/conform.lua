@@ -31,8 +31,16 @@ return {
     end,
     formatters_by_ft = {
       lua = { 'stylua' },
-      -- python = { "isort", "black" },
-      -- javascript = { "prettierd", "prettier", stop_after_first = true },
+      javascript = { 'prettier' },
+      javascriptreact = { 'prettier' },
+      typescript = { 'prettier' },
+      typescriptreact = { 'prettier' },
+      json = { 'prettier' },
+      jsonc = { 'prettier' },
+      css = { 'prettier' },
+      scss = { 'prettier' },
+      html = { 'prettier' },
+      markdown = { 'prettier' },
     },
   },
 }
