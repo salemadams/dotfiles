@@ -22,7 +22,6 @@ return {
       'typescript',
       'tsx',
       'javascript',
-      'jsx',
       'json',
       'css',
     },
