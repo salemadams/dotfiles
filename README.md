@@ -60,6 +60,7 @@ Complete reference for all custom keybindings across macOS configuration files.
   - [LSP (Language Server)](#lsp-language-server)
   - [Bufferline (Buffer Management)](#bufferline-buffer-management)
   - [Blink.cmp (Completion)](#blinkcmp-completion)
+  - [Autopairs (Auto-closing Brackets)](#autopairs-auto-closing-brackets)
   - [Mini.nvim (Surround)](#minivim-surround)
 
 ---
@@ -264,6 +265,36 @@ Uses the `default` preset. Common keybindings include:
 - `Ctrl + N` / `Ctrl + P` - Navigate completion menu
 - `Enter` - Confirm selection
 - `Ctrl + E` - Close completion menu
+
+### Autopairs (Auto-closing Brackets)
+
+**File:** `~/.config/nvim/lua/plugins/autopairs.lua`
+
+**Automatic Behavior:**
+- Typing `{`, `(`, `[`, `"`, `'`, or `` ` `` automatically inserts the closing pair
+- Pressing `Enter` between pairs creates a new line with proper indentation
+  ```
+  {
+      <cursor here>
+  }
+  ```
+- Pressing `Backspace` between empty pairs deletes both characters
+
+**Override Keybindings (Insert Mode):**
+
+Hold `Ctrl` while typing to insert brackets without auto-closing:
+
+| Key | Action | Description |
+|-----|--------|-------------|
+| `Ctrl + {` | Insert `{` only | Insert opening brace without auto-pair |
+| `Ctrl + }` | Insert `}` only | Insert closing brace without auto-pair |
+| `Ctrl + (` | Insert `(` only | Insert opening paren without auto-pair |
+| `Ctrl + )` | Insert `)` only | Insert closing paren without auto-pair |
+| `Ctrl + [` | Insert `[` only | Insert opening bracket without auto-pair |
+| `Ctrl + ]` | Insert `]` only | Insert closing bracket without auto-pair |
+| `Ctrl + "` | Insert `"` only | Insert double quote without auto-pair |
+| `Ctrl + '` | Insert `'` only | Insert single quote without auto-pair |
+| `Ctrl + `` ` `` | Insert `` ` `` only | Insert backtick without auto-pair |
 
 ### Mini.nvim (Surround)
 

@@ -56,6 +56,10 @@ vim.o.updatetime = 250
 -- Decrease mapped sequence wait time
 vim.o.timeoutlen = 300
 
+-- Decrease terminal escape sequence wait time (fixes Caps Lock → Esc mapping issues)
+-- This prevents the '[' character from appearing when using Esc in telescope/neo-tree
+vim.o.ttimeoutlen = 10
+
 -- Configure how new splits should be opened
 vim.o.splitright = true
 vim.o.splitbelow = true

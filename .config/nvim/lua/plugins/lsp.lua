@@ -134,6 +134,10 @@ return {
             },
           },
         },
+        tailwindcss = {
+          -- Tailwind CSS language server
+          -- Provides intellisense, hover, and diagnostics for Tailwind classes
+        },
         ts_ls = {
           -- TypeScript/JavaScript/React language server
           settings = {
