@@ -53,6 +53,7 @@ Complete reference for all custom keybindings across macOS configuration files.
 ## Table of Contents
 - [Karabiner (System-wide Keyboard Remapping)](#karabiner-system-wide-keyboard-remapping)
 - [AeroSpace (Window Manager)](#aerospace-window-manager)
+- [Tmux (Terminal Multiplexer)](#tmux-terminal-multiplexer)
 - [Neovim (Text Editor)](#neovim-text-editor)
   - [Core Keymaps](#core-keymaps)
   - [Telescope (Fuzzy Finder)](#telescope-fuzzy-finder)
@@ -146,6 +147,59 @@ Complete reference for all custom keybindings across macOS configuration files.
 | `↓` | Volume down | Decrease system volume |
 | `↑` | Volume up | Increase system volume |
 | `Shift + ↓` | Mute | Set volume to 0 and exit service mode |
+
+---
+
+## Tmux (Terminal Multiplexer)
+
+**Config:** `~/.tmux.conf`
+
+**Prefix Key:** `Ctrl + A` (remapped from default `Ctrl + B`)
+
+### Session & Configuration
+
+| Key | Action | Description |
+|-----|--------|-------------|
+| `Ctrl + A` then `r` | Reload config | Reload tmux configuration file |
+| `Ctrl + A` then `R` | Renumber windows | Renumber all windows from base-index |
+
+### Window Management
+
+| Key | Action | Description |
+|-----|--------|-------------|
+| `Ctrl + A` then `\|` | Split horizontal | Split window horizontally |
+| `Ctrl + A` then `-` | Split vertical | Split window vertically |
+| `Ctrl + A` then `0-9` | Switch window | Go to window by number (windows start at index 1) |
+
+### Pane Management
+
+| Key | Action | Description |
+|-----|--------|-------------|
+| `Ctrl + H` | Focus left pane | Move to pane on the left (vim-tmux-navigator) |
+| `Ctrl + J` | Focus down pane | Move to pane below (vim-tmux-navigator) |
+| `Ctrl + K` | Focus up pane | Move to pane above (vim-tmux-navigator) |
+| `Ctrl + L` | Focus right pane | Move to pane on the right (vim-tmux-navigator) |
+| `Ctrl + A` then `H` | Resize left | Resize pane 5 cells to the left |
+| `Ctrl + A` then `J` | Resize down | Resize pane 5 cells down |
+| `Ctrl + A` then `K` | Resize up | Resize pane 5 cells up |
+| `Ctrl + A` then `L` | Resize right | Resize pane 5 cells to the right |
+| `Ctrl + A` then `m` | Maximize toggle | Toggle pane zoom (maximize/restore) |
+
+### Copy Mode (Vi Mode)
+
+| Key | Action | Description |
+|-----|--------|-------------|
+| `Ctrl + A` then `[` | Enter copy mode | Enter copy/scroll mode |
+| `v` | Begin selection | Start visual selection (in copy mode) |
+| `y` | Copy selection | Copy selected text (in copy mode) |
+| `q` | Exit copy mode | Return to normal mode |
+
+### Special Features
+
+- **Mouse support enabled** - Click to select panes, resize with drag, scroll with mouse wheel
+- **Vim integration** - Seamless navigation between vim splits and tmux panes with `Ctrl + H/J/K/L`
+- **Session persistence** - tmux-resurrect and tmux-continuum auto-save and restore sessions
+- **Window/pane indexing** - Windows and panes start at index 1 (not 0)
 
 ---
 
@@ -382,5 +436,5 @@ brew install --cask font-jetbrains-mono-nerd-font
 
 ---
 
-**Last Updated:** 2025-11-21
+**Last Updated:** 2025-11-26
 **Auto-generated from config files**
