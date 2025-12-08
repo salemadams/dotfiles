@@ -37,8 +37,10 @@ vim.schedule(function()
   vim.o.clipboard = 'unnamedplus'
 end)
 
--- Enable break indent
-vim.o.breakindent = true
+-- Line wrapping settings
+vim.o.breakindent = true   -- Preserve indentation on wrapped lines
+vim.o.linebreak = true     -- Wrap at word boundaries (not mid-word)
+vim.o.colorcolumn = '100'  -- Visual guide at column 100
 
 -- Save undo history
 vim.o.undofile = true
@@ -82,3 +84,9 @@ vim.o.scrolloff = 20
 -- instead raise a dialog asking if you wish to save the current file(s)
 -- See `:help 'confirm'`
 vim.o.confirm = true
+
+-- Indentation settings
+vim.o.tabstop = 4        -- Number of spaces a tab counts for
+vim.o.shiftwidth = 4     -- Number of spaces for each indentation level
+vim.o.softtabstop = 4    -- Number of spaces tab key inserts/backspace removes
+vim.o.expandtab = true   -- Convert tabs to spaces

@@ -92,8 +92,13 @@ return {
       -- Diagnostic configuration
       vim.diagnostic.config {
         severity_sort = true,
-        float = { border = 'rounded', source = 'if_many' },
-        underline = true, -- Underline all severities for better visibility
+        float = {
+          border = 'rounded',
+          source = 'if_many',
+          wrap = true,        -- Wrap long error messages
+          max_width = 80,     -- Limit width for readability
+        },
+        underline = true,     -- Underline problematic code
         signs = vim.g.have_nerd_font and {
           text = {
             [vim.diagnostic.severity.ERROR] = '󰅚 ',
@@ -102,22 +107,7 @@ return {
             [vim.diagnostic.severity.HINT] = '󰌶 ',
           },
         } or {},
-        virtual_text = {
-          source = 'if_many',
-          spacing = 2,
-          prefix = vim.g.have_nerd_font and '●' or '■',
-          format = function(diagnostic)
-            -- Add severity icon prefix for clarity
-            local icons = {
-              [vim.diagnostic.severity.ERROR] = '󰅚',
-              [vim.diagnostic.severity.WARN] = '󰀪',
-              [vim.diagnostic.severity.INFO] = '󰋽',
-              [vim.diagnostic.severity.HINT] = '󰌶',
-            }
-            local icon = icons[diagnostic.severity] or ''
-            return string.format('%s %s', icon, diagnostic.message)
-          end,
-        },
+        virtual_text = false, -- Minimal: no inline text clutter
       }
 
       -- Get capabilities from blink.cmp
