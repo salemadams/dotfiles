@@ -1,22 +1,62 @@
-gui:
-  theme:
-    activeBorderColor:
-      - '#7199ee'
-      - bold
-    inactiveBorderColor:
-      - '#212234'
-    optionsTextColor:
-      - '#7199ee'
-    selectedLineBgColor:
-      - '#212234'
-    selectedRangeBgColor:
-      - '#212234'
-    cherryPickedCommitBgColor:
-      - '#7199ee'
-    cherryPickedCommitFgColor:
-      - '#a0a8cd'
-    unstagedChangesColor:
-      - '#ee6d85'
-    defaultFgColor:
-      - '#a0a8cd'
-  nerdFontsVersion: "3"
+customCommands:
+  - key: "C"
+    command: 'git commit -m "{{ .Form.Type }}{{if .Form.Scopes}}({{ .Form.Scopes }}){{end}}{{if eq .Form.Breaking `yes`}}!{{end}}: {{ .Form.Description }}"'
+    description: "commit with commitizen"
+    context: "files"
+    prompts:
+      - type: "menu"
+        title: "Select the type of change you are committing."
+        key: "Type"
+        options:
+          - name: "Feature"
+            description: "A new feature"
+            value: "feat"
+          - name: "Fix"
+            description: "A bug fix"
+            value: "fix"
+          - name: "Documentation"
+            description: "Documentation only changes"
+            value: "docs"
+          - name: "Styles"
+            description: "Formatting and whitespace changes"
+            value: "style"
+          - name: "Code Refactoring"
+            description: "Code changes that don't fix bugs or add features"
+            value: "refactor"
+          - name: "Performance Improvements"
+            description: "Code changes that improve performance"
+            value: "perf"
+          - name: "Tests"
+            description: "Adding or correcting tests"
+            value: "test"
+          - name: "Builds"
+            description: "Build system or dependency changes"
+            value: "build"
+          - name: "Continuous Integration"
+            description: "CI configuration and scripts"
+            value: "ci"
+          - name: "Chores"
+            description: "Other maintenance changes"
+            value: "chore"
+          - name: "Reverts"
+            description: "Reverts a previous commit"
+            value: "revert"
+      - type: "input"
+        title: "Enter the scope(s) of this change."
+        key: "Scopes"
+      - type: "input"
+        title: "Enter the short description of the change."
+        key: "Description"
+      - type: "menu"
+        title: "Is this a breaking change?"
+        key: "Breaking"
+        options:
+          - name: "No"
+            description: "This change does not introduce a breaking change."
+            value: "no"
+          - name: "Yes"
+            description: "This change introduces a breaking change."
+            value: "yes"
+      - type: "confirm"
+        title: "Is the commit message correct?"
+        body: "{{ .Form.Type }}{{if .Form.Scopes}}({{ .Form.Scopes }}){{end}}{{if eq .Form.Breaking `yes`}}!{{end}}: {{ .Form.Description }}"

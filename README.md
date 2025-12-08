@@ -203,6 +203,96 @@ Complete reference for all custom keybindings across macOS configuration files.
 
 ---
 
+## Lazygit (Git UI)
+
+**Config:** `~/.config/lazygit/config.yml`
+
+### Custom Commands
+
+| Key | Action | Context | Description |
+|-----|--------|---------|-------------|
+| `C` | Conventional commit | Files view | Interactive conventional commit with type, scope, and description (overrides default "commit with editor") |
+
+**Conventional Commit Types:**
+- `feat` - New feature
+- `fix` - Bug fix
+- `docs` - Documentation only changes
+- `style` - Formatting and whitespace changes
+- `refactor` - Code changes that don't fix bugs or add features
+- `perf` - Code changes that improve performance
+- `test` - Adding or correcting tests
+- `build` - Build system or dependency changes
+- `ci` - CI configuration and scripts
+- `chore` - Other maintenance changes
+- `revert` - Reverts a previous commit
+
+### Common Default Keybindings
+
+**Files View:**
+| Key | Action | Description |
+|-----|--------|-------------|
+| `Space` | Stage/unstage | Toggle staging for selected file |
+| `a` | Stage all | Stage all files |
+| `A` | Unstage all | Unstage all files |
+| `c` | Commit | Quick commit with message |
+| `C` | ~~Commit using git editor~~ | **DISABLED** - Replaced by custom conventional commit |
+| `Shift+A` | Amend last commit | Amend without editing message |
+| `d` | Discard changes | Discard changes for selected file |
+| `e` | Edit file | Open file in $EDITOR |
+| `o` | Open file | Open file with default application |
+| `i` | Ignore | Add to .gitignore |
+| `r` | Refresh | Refresh git status |
+| `s` | Stash | Stash all changes |
+| `Shift+S` | Stash options | Show stash options menu |
+
+**Commits View:**
+| Key | Action | Description |
+|-----|--------|-------------|
+| `Enter` | View commit | View commit files |
+| `c` | Checkout commit | Checkout commit as detached HEAD |
+| `d` | Delete commit | Drop/delete commit |
+| `r` | Reword commit | Edit commit message |
+| `Shift+R` | Rebase | Interactive rebase from commit |
+| `f` | Fixup commit | Mark as fixup for previous commit |
+| `s` | Squash commit | Squash into previous commit |
+| `g` | Reset to commit | Reset HEAD to this commit |
+| `Ctrl+O` | Copy commit SHA | Copy SHA to clipboard |
+| `t` | Revert commit | Create revert commit |
+| `T` | Tag commit | Create tag at commit |
+
+**Branches View:**
+| Key | Action | Description |
+|-----|--------|-------------|
+| `Space` | Checkout branch | Switch to selected branch |
+| `n` | New branch | Create new branch |
+| `o` | Create pull request | Open PR creation in browser |
+| `Shift+O` | View pull request | View PR in browser |
+| `d` | Delete branch | Delete local branch |
+| `Shift+D` | Force delete | Force delete local branch |
+| `r` | Rebase branch | Rebase current branch onto selected |
+| `M` | Merge into current | Merge selected branch into current |
+| `f` | Fast-forward | Fast-forward current branch |
+| `g` | Reset to branch | Reset current branch to selected |
+
+**Global Keybindings:**
+| Key | Action | Description |
+|-----|--------|-------------|
+| `1-5` | Switch view | Jump to Files(1), Branches(2), Commits(3), Stash(4), Reflog(5) |
+| `Tab` | Next view | Cycle to next panel |
+| `Shift+Tab` | Previous view | Cycle to previous panel |
+| `[` / `]` | Next/previous tab | Switch between tabs in current view |
+| `z` | Undo | Undo last action |
+| `Ctrl+Z` | Redo | Redo last undone action |
+| `P` | Push | Push to remote |
+| `Shift+P` | Push options | Show push options menu |
+| `p` | Pull | Pull from remote |
+| `f` | Fetch | Fetch from remote |
+| `q` | Quit | Exit lazygit |
+| `?` | Help | Show help menu |
+| `Esc` | Cancel | Cancel current operation |
+
+---
+
 ## Neovim (Text Editor)
 
 **Config:** `~/.config/nvim/`
@@ -436,5 +526,5 @@ brew install --cask font-jetbrains-mono-nerd-font
 
 ---
 
-**Last Updated:** 2025-11-26
+**Last Updated:** 2025-12-07 (Lazygit config simplified, git commit hook removed)
 **Auto-generated from config files**

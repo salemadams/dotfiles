@@ -19,6 +19,9 @@ setopt hist_expire_dups_first
 setopt hist_ignore_dups
 setopt hist_verify
 
+# ---- "cl" to clear ----
+alias cl='clear'
+
 # completion using arrow keys (based on history)
 bindkey '^[[A' history-search-backward
 bindkey '^[[B' history-search-forward
@@ -37,9 +40,13 @@ alias ls='ls -a'
 # ---- Alias for dotfiles repo ---- 
 alias config="git --git-dir=$HOME/.dotfiles --work-tree=$HOME"
 
+# ---- Lazygit with custom config location ----
+alias lazygit='command lazygit --use-config-file=$HOME/.config/lazygit/config.yml'
+
 # ---- Alias for opening dotfiles in LazyGit ----
-alias lgdot='lazygit --git-dir=$HOME/.dotfiles --work-tree=$HOME'
+alias lgdot='command lazygit --git-dir=$HOME/.dotfiles --work-tree=$HOME --use-config-file=$HOME/.config/lazygit/config.yml'
 
 source /opt/homebrew/share/zsh-autosuggestions/zsh-autosuggestions.zsh
 source /opt/homebrew/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
 export PATH="$HOME/.local/bin:$PATH"
+eval "$(fnm env --use-on-cd --shell zsh)"
