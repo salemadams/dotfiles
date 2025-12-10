@@ -1,6 +1,3 @@
--- [[ Autoformat ]]
--- See `:help conform`
-
 return {
   'stevearc/conform.nvim',
   event = { 'BufWritePre' },

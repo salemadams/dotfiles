@@ -1,9 +1,5 @@
--- [[ LSP Configuration ]]
--- See `:help lspconfig` and `:help lsp`
-
 return {
   {
-    -- `lazydev` configures Lua LSP for your Neovim config, runtime and plugins
     'folke/lazydev.nvim',
     ft = 'lua',
     opts = {
@@ -89,16 +85,15 @@ return {
         end,
       })
 
-      -- Diagnostic configuration
       vim.diagnostic.config {
         severity_sort = true,
         float = {
           border = 'rounded',
           source = 'if_many',
-          wrap = true,        -- Wrap long error messages
-          max_width = 80,     -- Limit width for readability
+          wrap = true,
+          max_width = 80,
         },
-        underline = true,     -- Underline problematic code
+        underline = true,
         signs = vim.g.have_nerd_font and {
           text = {
             [vim.diagnostic.severity.ERROR] = '󰅚 ',
@@ -107,13 +102,11 @@ return {
             [vim.diagnostic.severity.HINT] = '󰌶 ',
           },
         } or {},
-        virtual_text = false, -- Minimal: no inline text clutter
+        virtual_text = false,
       }
 
-      -- Get capabilities from blink.cmp
       local capabilities = require('blink.cmp').get_lsp_capabilities()
 
-      -- LSP servers configuration
       local servers = {
         lua_ls = {
           settings = {
@@ -124,12 +117,8 @@ return {
             },
           },
         },
-        tailwindcss = {
-          -- Tailwind CSS language server
-          -- Provides intellisense, hover, and diagnostics for Tailwind classes
-        },
+        tailwindcss = {},
         ts_ls = {
-          -- TypeScript/JavaScript/React language server
           settings = {
             typescript = {
               inlayHints = {
@@ -157,7 +146,6 @@ return {
         },
       }
 
-      -- Ensure tools are installed
       local ensure_installed = vim.tbl_keys(servers or {})
       vim.list_extend(ensure_installed, {
         'stylua',

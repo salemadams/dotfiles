@@ -63,6 +63,7 @@ Complete reference for all custom keybindings across macOS configuration files.
   - [Blink.cmp (Completion)](#blinkcmp-completion)
   - [Autopairs (Auto-closing Brackets)](#autopairs-auto-closing-brackets)
   - [Mini.nvim (Surround)](#minivim-surround)
+  - [Oil.nvim (File Explorer)](#oilnvim-file-explorer)
 
 ---
 
@@ -453,6 +454,25 @@ Default `mini.surround` keybindings:
 - `sh` - Highlight surrounding
 - `sn` - Update n lines (config)
 
+### Oil.nvim (File Explorer)
+
+**File:** `~/.config/nvim/lua/plugins/oil.lua`
+
+| Key | Action | Description |
+|-----|--------|-------------|
+| `-` | Open parent directory | Open oil.nvim in current window |
+| `<leader>o` | Open oil floating window | Open oil.nvim in floating window |
+
+**Oil.nvim Window Keybindings:**
+- `Enter` - Open file or directory
+- `g?` - Show help
+- `-` - Go to parent directory
+- `_` - Open current working directory
+- `` ` `` - Toggle hidden files
+- `g.` - Toggle hidden files
+- `g\\` - Toggle trash
+- And more (use `g?` in oil window for full list)
+
 ---
 
 ## Notes
@@ -526,5 +546,5 @@ brew install --cask font-jetbrains-mono-nerd-font
 
 ---
 
-**Last Updated:** 2025-12-07 (Lazygit config simplified, git commit hook removed)
+**Last Updated:** 2025-12-10 (Fixed oil.nvim configuration, added oil.nvim keybindings)
 **Auto-generated from config files**

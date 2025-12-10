@@ -1,6 +1,3 @@
--- [[ Treesitter - Syntax highlighting and parsing ]]
--- See `:help nvim-treesitter`
-
 return {
   'nvim-treesitter/nvim-treesitter',
   build = ':TSUpdate',
@@ -18,7 +15,6 @@ return {
       'query',
       'vim',
       'vimdoc',
-      -- React/React-Native support
       'typescript',
       'tsx',
       'javascript',
