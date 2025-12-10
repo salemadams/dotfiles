@@ -93,19 +93,19 @@ Complete reference for all custom keybindings across macOS configuration files.
 
 | Key | Action | Description |
 |-----|--------|-------------|
-| `Alt + H` | Focus left | Move focus to left window |
-| `Alt + J` | Focus down | Move focus to window below |
-| `Alt + K` | Focus up | Move focus to window above |
-| `Alt + L` | Focus right | Move focus to right window |
+| `Alt + h` | Focus left | Move focus to left window |
+| `Alt + j` | Focus down | Move focus to window below |
+| `Alt + k` | Focus up | Move focus to window above |
+| `Alt + l` | Focus right | Move focus to right window |
 
 ### Window Movement
 
 | Key | Action | Description |
 |-----|--------|-------------|
-| `Alt + Shift + H` | Move left | Move window to the left |
-| `Alt + Shift + J` | Move down | Move window down |
-| `Alt + Shift + K` | Move up | Move window up |
-| `Alt + Shift + L` | Move right | Move window to the right |
+| `Alt + Shift + h` | Move left | Move window to the left |
+| `Alt + Shift + j` | Move down | Move window down |
+| `Alt + Shift + k` | Move up | Move window up |
+| `Alt + Shift + l` | Move right | Move window to the right |
 
 ### Window Resizing
 
@@ -119,7 +119,7 @@ Complete reference for all custom keybindings across macOS configuration files.
 | Key | Action | Description |
 |-----|--------|-------------|
 | `Alt + 1-9` | Switch workspace | Go to workspace 1-9 |
-| `Alt + A-Z` | Switch workspace | Go to workspace A-Z (excluding H, J, K, L) |
+| `Alt + A-Z` | Switch workspace | Go to workspace A-Z (excluding h, j, k, l) |
 | `Alt + Tab` | Previous workspace | Toggle between current and previous workspace |
 
 ### Move Window to Workspace
@@ -127,7 +127,7 @@ Complete reference for all custom keybindings across macOS configuration files.
 | Key | Action | Description |
 |-----|--------|-------------|
 | `Alt + Shift + 1-9` | Move to workspace | Move window to workspace 1-9 |
-| `Alt + Shift + A-Z` | Move to workspace | Move window to workspace A-Z (excluding H, J, K, L) |
+| `Alt + Shift + A-Z` | Move to workspace | Move window to workspace A-Z (excluding h, j, k, l) |
 | `Alt + Shift + Tab` | Move to next monitor | Move workspace to next monitor |
 
 ### Service Mode
@@ -144,7 +144,7 @@ Complete reference for all custom keybindings across macOS configuration files.
 | `R` | Reset layout | Flatten workspace tree and exit service mode |
 | `F` | Toggle floating | Toggle between floating and tiling layout |
 | `Backspace` | Close others | Close all windows except current |
-| `Alt + Shift + H/J/K/L` | Join with direction | Join current window with window in direction |
+| `Alt + Shift + h/j/k/l` | Join with direction | Join current window with window in direction |
 | `↓` | Volume down | Decrease system volume |
 | `↑` | Volume up | Increase system volume |
 | `Shift + ↓` | Mute | Set volume to 0 and exit service mode |
@@ -176,10 +176,10 @@ Complete reference for all custom keybindings across macOS configuration files.
 
 | Key | Action | Description |
 |-----|--------|-------------|
-| `Ctrl + H` | Focus left pane | Move to pane on the left (vim-tmux-navigator) |
-| `Ctrl + J` | Focus down pane | Move to pane below (vim-tmux-navigator) |
-| `Ctrl + K` | Focus up pane | Move to pane above (vim-tmux-navigator) |
-| `Ctrl + L` | Focus right pane | Move to pane on the right (vim-tmux-navigator) |
+| `Ctrl + h` | Focus left pane | Move to pane on the left (vim-tmux-navigator) |
+| `Ctrl + j` | Focus down pane | Move to pane below (vim-tmux-navigator) |
+| `Ctrl + k` | Focus up pane | Move to pane above (vim-tmux-navigator) |
+| `Ctrl + l` | Focus right pane | Move to pane on the right (vim-tmux-navigator) |
 | `Ctrl + A` then `H` | Resize left | Resize pane 5 cells to the left |
 | `Ctrl + A` then `J` | Resize down | Resize pane 5 cells down |
 | `Ctrl + A` then `K` | Resize up | Resize pane 5 cells up |
@@ -198,7 +198,7 @@ Complete reference for all custom keybindings across macOS configuration files.
 ### Special Features
 
 - **Mouse support enabled** - Click to select panes, resize with drag, scroll with mouse wheel
-- **Vim integration** - Seamless navigation between vim splits and tmux panes with `Ctrl + H/J/K/L`
+- **Vim integration** - Seamless navigation between vim splits and tmux panes with `Ctrl + h/j/k/l`
 - **Session persistence** - tmux-resurrect and tmux-continuum auto-save and restore sessions
 - **Window/pane indexing** - Windows and panes start at index 1 (not 0)
 
@@ -308,11 +308,11 @@ Complete reference for all custom keybindings across macOS configuration files.
 | Normal | `<leader>q` | Open diagnostic quickfix | Open diagnostics in quickfix list |
 | Terminal | `Esc Esc` | Exit terminal mode | Return to normal mode from terminal |
 | Normal | `↑ ↓ ← →` | Disabled | Reminders to use hjkl |
-| Normal | `Ctrl + H` | Focus left window | Move focus to left split |
-| Normal | `Ctrl + L` | Focus right window | Move focus to right split |
-| Normal | `Ctrl + J` | Focus lower window | Move focus to lower split |
-| Normal | `Ctrl + K` | Focus upper window | Move focus to upper split |
-| Normal | `Ctrl + A` | Select all | Select entire file |
+| Normal | `Ctrl + h` | Focus left window | Move focus to left split (vim-tmux-navigator) |
+| Normal | `Ctrl + l` | Focus right window | Move focus to right split (vim-tmux-navigator) |
+| Normal | `Ctrl + j` | Focus lower window | Move focus to lower split (vim-tmux-navigator) |
+| Normal | `Ctrl + k` | Focus upper window | Move focus to upper split (vim-tmux-navigator) |
+| Normal | `Ctrl + a` | Select all | Select entire file |
 
 ### Telescope (Fuzzy Finder)
 
@@ -546,5 +546,5 @@ brew install --cask font-jetbrains-mono-nerd-font
 
 ---
 
-**Last Updated:** 2025-12-10 (Fixed oil.nvim configuration, added oil.nvim keybindings)
+**Last Updated:** 2025-12-10 (Fixed keybinding capitalization across all sections)
 **Auto-generated from config files**
